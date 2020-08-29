@@ -22,6 +22,7 @@ const weatherReducer = (state=intitialState, action) => {
         case type.FAILED_WEATHER_FORECAST:
             return {
                 ...state,
+                weatherList:[],
                 loading: false,
                 error: true
             }

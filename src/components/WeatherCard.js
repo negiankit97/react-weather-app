@@ -10,13 +10,17 @@ const icons = {
 const WeatherCard = (props) => {
     const sunset = new Date(props.sunset * 1000).toLocaleTimeString(),
         sunrise = new Date(props.sunrise * 1000).toLocaleTimeString();
+
+    const datetime = new Date(props.date).toUTCString();
     return (
         <li className="weather__card">
             <article className="weather__card__details">
                 <img src={icons[props.desc]} className="weather__card__details__icon" />
                 <div className="weather__card__details__header">
-                    <h1 className="weather__card__details__title">{props.desc}</h1>
-                    <span className="weather__card__details__datetime">{props.date}</span>
+                    <div className="weather__card__details__header__details">
+                        <h1 className="weather__card__details__title">{props.desc}</h1>
+                        <span className="weather__card__details__datetime">{datetime}</span>
+                    </div>
                 </div>
                 <div className="weather__card__details__time">
                     <div className="weather__card__details__time__sunrise">
@@ -33,6 +37,16 @@ const WeatherCard = (props) => {
                         <img src={process.env.PUBLIC_URL + '/icons/sunset.svg'} alt="sunset" className="weather__card__details__time__sunset__icon" />
                         <span className="weather__card__details__time__sunset__title">Sunset</span>
                         <h4 className="weather__card__details__time__sunset__time">{sunset}</h4>
+                    </div>
+                </div>
+                <div className="weather__card__details__temp">
+                    <div className="weather__card__details__temp__card">
+                        <span className="weather__card__details__temp__title">Minimum</span>
+                        <span className="weather__card__details__temp__min">{Math.floor(props.mintemp - 273.15)}&#8451;</span>
+                    </div>
+                    <div className="weather__card__details__temp__card">
+                        <span className="weather__card__details__temp__title">Maximum</span>
+                        <span className="weather__card__details__temp__max">{Math.ceil(props.maxtemp - 273.15)}&#8451;</span>
                     </div>
                 </div>
             </article>

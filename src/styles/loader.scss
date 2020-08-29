@@ -1,9 +1,12 @@
 .loader {
-  .loader-icon {
-    width: 10em;
-    height: 10em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .loader__icon {
+    width: 4em;
+    height: 4em;
     pointer-events: none;
-    animation: App-logo infinite 2s linear;
+    animation: App-logo infinite 1s linear;
   }
 }
 
@@ -14,6 +17,6 @@
     }
     to{
         color: rgb(66, 75, 245);
-        transform: rotate(359deg);
+        transform: rotate(360deg);
     }
 }

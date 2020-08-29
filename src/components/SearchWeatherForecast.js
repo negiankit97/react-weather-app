@@ -9,7 +9,8 @@ const SearchWeatherForecast = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.fetchWeather(city)
+        props.fetchWeather(city);
+        setCity('');
     }
     function handleChange(e) {
         setCity(e.target.value);
