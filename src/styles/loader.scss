@@ -1,0 +1,19 @@
+.loader {
+  .loader-icon {
+    width: 10em;
+    height: 10em;
+    pointer-events: none;
+    animation: App-logo infinite 2s linear;
+  }
+}
+
+@keyframes App-logo{
+    from {
+        color: rgb(38, 136, 255);;
+        transform: rotate(0deg);
+    }
+    to{
+        color: rgb(66, 75, 245);
+        transform: rotate(359deg);
+    }
+}

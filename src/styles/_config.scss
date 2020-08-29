@@ -1,0 +1,34 @@
+$primary-color:white;
+$secondary-color: #000;
+$background: #eee;
+$mobile: 800px;
+$tablet: 1200px;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    color: $secondary-color;
+    font-size: 1em;
+    line-height: 1.54;
+    background: $background;
+}
+
+@mixin mobile{
+    @content;
+}
+
+@mixin tablet{
+    @content;
+}
+
+@mixin desktop{
+    @content;
+}

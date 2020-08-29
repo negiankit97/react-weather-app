@@ -1,0 +1,78 @@
+@import "_config";
+
+.weather__card {
+  background: white;
+  margin: 2em auto;
+  padding: 2em;
+  list-style: none;
+  box-shadow: 0 2px 10px 8px rgba(0, 0, 0, 0.1);
+  &__details {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    &__icon {
+      width: 3em;
+      height: 3em;
+    }
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-flow: row wrap;
+      &__title {
+        width: 40%;
+        margin: 0 auto;
+        font-size: 2em;
+      }
+      &__datetime {
+        width: 40%;
+        font-size: 2em;
+      }
+    }
+    &__time {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      &__sunrise {
+        text-align: left;
+        &__icon {
+          width: 3em;
+          height: 3em;
+          margin-right: 1em;
+        }
+        &__title {
+          font-size: 2em;
+        }
+        &__time {
+          font-size: 1em;
+        }
+      }
+      &__humidity {
+        &__icon {
+          width: 3em;
+          height: 3em;
+          margin-right: 1em;
+        }
+        &__title {
+          font-size: 2em;
+        }
+      }
+      &__sunset {
+        &__icon {
+          width: 3em;
+          height: 3em;
+          margin-right: 1em;
+        }
+        &__title {
+          font-size: 2em;
+        }
+        &__time {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
