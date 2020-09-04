@@ -1,34 +1,65 @@
-$primary-color:white;
+$primary-color: white;
 $secondary-color: #000;
 $background: #eee;
 $mobile: 800px;
 $tablet: 1200px;
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    color: $secondary-color;
-    font-size: 1em;
-    line-height: 1.54;
-    background: $background;
-}
-
-@mixin mobile{
+@mixin mobile {
+  @media screen and (min-wdith: $mobile) {
     @content;
+  }
 }
 
-@mixin tablet{
+@mixin tablet {
+  @media screen and (min-wdith: $mob) {
     @content;
+  }
 }
 
-@mixin desktop{
+@mixin desktop {
+  @media screen and (max-wdith: $mo) {
     @content;
+  }
+}
+@mixin transition-ease {
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  color: $secondary-color;
+  font-size: 1em;
+  line-height: 1.54;
+  background: $background;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  &:hover {
+    @include transition-ease;
+    top: -2px;
+    color: black;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  opacity: 0.8;
 }

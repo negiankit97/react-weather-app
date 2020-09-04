@@ -11,6 +11,7 @@ const SearchWeatherForecast = (props) => {
         e.preventDefault();
         props.fetchWeather(city);
         setCity('');
+        console.log(city);
     }
     function handleChange(e) {
         setCity(e.target.value);
@@ -21,7 +22,7 @@ const SearchWeatherForecast = (props) => {
                 <div className="search__weather__form__group">
                     <div className="form__control">
                         <label htmlFor="city" className="label">City</label>
-                        <input type="text" onChange={(e) => handleChange(e)} name="city" className="input"/>
+                        <input type="text" onChange={(e) => handleChange(e)} name="city" className="input" placeholder="Type a city..."/>
                     </div>
                     <button type="submit" className="submit__btn">Submit</button>
                 </div>

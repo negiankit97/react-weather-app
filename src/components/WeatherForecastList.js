@@ -10,10 +10,19 @@ const WeatherForecastList = (props) => {
         <ul className="weather__report__list">
             {props.isLoading && <Loader/>}
             {props.isError  && <div className="error-alert">No result found.</div>}
-            {props.weatherList.length !== 0 && props.weatherList.list.map((report, index) => {
+            {props.forecastList.length !== 0 && props.forecastList.list.map((report, index) => {
                 return (
                     <LazyLoad key={index} height={200} offset={100} throttle={2} placeholder={<Loader/>}>
-                        <WeatherCard key={index} desc={report.weather[0].main} humidity={report.main.humidity} sunrise={props.weatherList.city.sunrise} sunset={props.weatherList.city.sunset} date={report.dt_txt} mintemp={report.main.temp_min} maxtemp={report.main.temp_max}/>
+                        <WeatherCard 
+                        key={index}
+                        desc={report.weather[0].main}
+                        humidity={report.main.humidity}
+                        sunrise={props.forecastList.city.sunrise}
+                        sunset={props.forecastList.city.sunset}
+                        date={report.dt_txt}
+                        feels_like={report.main.feels_like}
+                        mintemp={report.main.temp_min}
+                        maxtemp={report.main.temp_max}/>
                     </LazyLoad>)}
                 )
             }
@@ -22,9 +31,9 @@ const WeatherForecastList = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    weatherList: state.weather.weatherList,
-    isLoading: state.weather.loading,
-    isError: state.weather.error
+    forecastList: state.forecast.forecastList,
+    isLoading: state.forecast.loading,
+    isError: state.forecast.error
 });
 
 export default connect(mapStateToProps, null)(WeatherForecastList);

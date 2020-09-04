@@ -11,15 +11,18 @@ const WeatherCard = (props) => {
     const sunset = new Date(props.sunset * 1000).toLocaleTimeString(),
         sunrise = new Date(props.sunrise * 1000).toLocaleTimeString();
 
-    const datetime = new Date(props.date).toUTCString();
+    const datetime = new Date(props.date).toDateString();
     return (
         <li className="weather__card">
             <article className="weather__card__details">
-                <img src={icons[props.desc]} className="weather__card__details__icon" />
+                <div className="weather__card__details__img__head">
+                    <img src={icons[props.desc]} className="weather__card__details__img__head__icon"/>
+                    <span className="weather__card__details__img__head__date">{datetime}</span>
+                </div>
                 <div className="weather__card__details__header">
                     <div className="weather__card__details__header__details">
-                        <h1 className="weather__card__details__title">{props.desc}</h1>
-                        <span className="weather__card__details__datetime">{datetime}</span>
+                        <h1 className="weather__card__details__title x">{props.desc}</h1>
+                        <h4 className="weather__card__details__feels x">Feels like: {(props.feels_like - 273.15).toFixed(2)}&#8451;</h4>
                     </div>
                 </div>
                 <div className="weather__card__details__time">
